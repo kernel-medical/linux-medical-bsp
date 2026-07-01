@@ -280,8 +280,9 @@
   <div class="nav-links">
     <a href="#packages">Packages</a>
     <a href="#tool">kernel-soup-gen</a>
+    <a href="#case-study">Case study</a>
     <a href="#contact">Contact</a>
-    <a href="https://github.com/shofiqtest/kernel-soup-gen" target="_blank">GitHub ↗</a>
+    <a href="https://github.com/kernel-medical/kernel-soup-gen" target="_blank">GitHub ↗</a>
   </div>
 </nav>
 
@@ -438,6 +439,36 @@
       <div class="value">ELISA Project</div>
       <div class="sub">Linux Foundation safety WG</div>
     </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- CASE STUDY -->
+<div class="section" id="case-study">
+  <div class="section-label">Reference project</div>
+  <h2>ADS1299 EEG/ECG driver — from silicon to IEC 62304</h2>
+  <p>A complete example of what kernel driver work looks like end-to-end in a medical context.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:36px;">
+    <div class="problem-card">
+      <div class="icon">⚡</div>
+      <h3>Problem</h3>
+      <p>The Texas Instruments ADS1299 is the dominant EEG/ECG acquisition chip used in medical BCI devices (OpenBCI, research-grade EEG headsets). No upstream Linux driver existed — medical device teams were each writing their own out-of-tree driver, with no shared maintenance and no compliance trail.</p>
+    </div>
+    <div class="problem-card">
+      <div class="icon">🔧</div>
+      <h3>What was done</h3>
+      <p>Wrote a full IIO subsystem driver for the ADS1298/ADS1299 family, submitted to the Linux kernel mailing list. Simultaneously generated the IEC 62304 §8 SOUP record using kernel-soup-gen — covering MODULE_*, Kconfig dependency, git history, maintainer contacts, and CVE search links. All fields verifiable directly from the kernel source tree.</p>
+    </div>
+    <div class="problem-card">
+      <div class="icon">✅</div>
+      <h3>Outcome</h3>
+      <p>Driver submitted to mainline Linux (IIO subsystem, Jonathan Cameron reviewing). Once merged: every medical device team using ADS1299 gets an upstream-maintained driver with a full SOUP record generated in under one second. Zero per-team duplication of compliance work.</p>
+    </div>
+  </div>
+  <div style="margin-top:24px;">
+    <a class="btn btn-secondary" href="https://lore.kernel.org/all/?q=ads1299" target="_blank" style="margin-right:12px;">View patch on lore.kernel.org ↗</a>
+    <a class="btn btn-secondary" href="https://github.com/kernel-medical/kernel-soup-gen" target="_blank">See kernel-soup-gen ↗</a>
   </div>
 </div>
 
