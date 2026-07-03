@@ -452,6 +452,55 @@
   </div>
 </div>
 
+
+<hr>
+
+<!-- ROS2 MEDICAL BRIDGE SERVICE -->
+<div class="section" id="ros2">
+  <div class="section-label">New service</div>
+  <h2>ROS 2 Medical Robotics Integration</h2>
+  <p>Bridge any Linux IIO biosignal device to a ROS 2 surgical robot or monitoring system — complete open source stack, IEC 62304 documented.</p>
+
+  <div style="margin:36px 0 24px;background:#0d1b2a;border:1px solid #1f3a6e;border-radius:10px;overflow:hidden;">
+    <img src="https://raw.githubusercontent.com/kernel-medical/ros2_iio_medical/master/docs/architecture.svg"
+         alt="Linux IIO to ROS 2 acquisition stack"
+         style="width:100%;display:block;"/>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:28px;">
+    <div class="problem-card">
+      <div class="icon">&#9889;</div>
+      <h3>Kernel space</h3>
+      <p>Linux IIO driver for your biosignal ADC — SPI/I2C, DMA ring buffer, hardware interrupt trigger. Submitted upstream so you get free maintenance forever.</p>
+    </div>
+    <div class="problem-card">
+      <div class="icon">&#128279;</div>
+      <h3>Userspace bridge</h3>
+      <p>ros2_iio_medical reads the IIO kernel buffer via epoll — hardware-timed, no missed samples — and publishes typed ROS 2 topics for robot control or clinical logging.</p>
+    </div>
+    <div class="problem-card">
+      <div class="icon">&#128203;</div>
+      <h3>IEC 62304 package</h3>
+      <p>SOUP records, SRS, SDS, FMEA for both the kernel driver and the ROS 2 bridge — ready to hand to your regulatory team.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+    <a class="btn btn-primary" href="#contact">Discuss your device</a>
+    <a class="btn btn-secondary" href="https://github.com/kernel-medical/ros2_iio_medical" target="_blank">ros2_iio_medical on GitHub</a>
+  </div>
+
+  <div style="margin-top:28px;background:#111;border:1px solid #30363d;border-radius:8px;padding:20px;">
+    <div style="font-size:0.75rem;color:#8b949e;margin-bottom:12px;letter-spacing:1px;text-transform:uppercase;">Supported devices</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.875rem;">
+      <span style="color:#3fb950;">TI ADS1299 &mdash; 8ch 24-bit EEG/ECG</span>
+      <span style="color:#3fb950;">ADI MAX86150 &mdash; ECG + PPG</span>
+      <span style="color:#3fb950;">ADI MAX30102 &mdash; SpO&#8322; / HR</span>
+      <span style="color:#3fb950;">TI ti-ads1298 &mdash; ECG</span>
+      <span style="color:#8b949e;">Any Linux IIO device</span>
+    </div>
+  </div>
+</div>
 <hr>
 
 <!-- CASE STUDY -->
@@ -490,7 +539,7 @@
     <p>Describe your hardware platform, target kernel version, and regulatory class.<br>Response within 1 business day.</p>
     <div class="contact-links">
       <a class="btn btn-primary" href="mailto:shofiqtest@gmail.com">shofiqtest@gmail.com</a>
-      <a class="btn btn-secondary" href="https://github.com/shofiqtest/iec62304-embedded-drivers" target="_blank">See example documents ↗</a>
+      <a class="btn btn-secondary" href="https://github.com/kernel-medical/iec62304-embedded-drivers" target="_blank">See example documents ↗</a>
       <a class="btn btn-secondary" href="https://lore.kernel.org/all/?q=Md+Shofiqul+Islam" target="_blank">Kernel contributions ↗</a>
     </div>
   </div>
